@@ -1,0 +1,97 @@
+@import "../utils/variables";
+
+.team-title {
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+  text-transform: capitalize;
+
+  margin-bottom: 72px;
+}
+
+.teammate-name {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.teammate-trade {
+  font-size: 16px;
+  line-height: 1.2;
+  text-align: center;
+  color: $secondary-color;
+}
+
+.team-section {
+  background: #f4f4fd;
+}
+
+.teammates {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  margin: 0 auto;
+
+  @include break(768px) {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 24px;
+
+    width: 552px;
+  }
+
+  @include break(1200px) {
+    width: 100%;
+  }
+}
+
+.teammate-card {
+  background-color: $accent-color;
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  border-radius: 0px 0px 4px 4px;
+
+  @include range(320px, 479px) {
+    margin: 0 auto;
+  }
+
+  @include break(480px) {
+    margin: 0 auto;
+  }
+
+  @include break(768px) {
+    margin: 0;
+    max-width: calc((100% - 24px) / 2);
+  }
+}
+
+.teammate-card-description {
+  padding: 32px 16px;
+}
+
+// SOCIAL
+
+.social-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $pre-active-color;
+  transition: background-color $transition-duration-and-fun;
+
+  &:hover,
+  &:focus {
+    background-color: $active-color;
+  }
+}

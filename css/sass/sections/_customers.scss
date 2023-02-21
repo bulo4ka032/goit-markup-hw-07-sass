@@ -1,0 +1,82 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.customers-title {
+  font-size: 36px;
+  line-height: 1.1;
+  text-align: center;
+
+  margin-bottom: 72px;
+}
+
+.customers-section {
+  padding-top: 130px;
+  padding-bottom: 120px;
+}
+
+.customers-list {
+  display: flex;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  flex-wrap: wrap;
+  row-gap: 72px;
+  column-gap: 16px;
+
+  @include break(768px) {
+    column-gap: 24px;
+    row-gap: 72px;
+    width: 557px;
+  }
+
+  @include break(1200px) {
+    width: auto;
+  }
+}
+
+.customers-item {
+  @include range(320px, 479px) {
+    width: calc((100% - 16px) / 2);
+  }
+
+  @include break(768px) {
+    width: calc((100% - 48px) / 3);
+  }
+
+  @include break(1200px) {
+    width: auto;
+  }
+}
+
+.customer-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 168px;
+  height: 88px;
+
+  border-radius: 4px;
+  border: 1px solid #8e8f99;
+  transition: border $transition-duration-and-fun;
+
+  &:hover .customer-icon,
+  &:focus .customer-icon {
+    fill: $active-color;
+  }
+
+  &:hover,
+  &:focus {
+    border-radius: 4px;
+    border: 1px solid $active-color;
+  }
+
+  @include range(320px, 479px) {
+    max-width: 100%;
+  }
+}
+
+.customer-icon {
+  fill: #8e8f99;
+  transition: fill $transition-duration-and-fun;
+}

@@ -1,0 +1,11 @@
+@import "../utils/variables";
+
+body {
+    font-family: $primary-font;
+    letter-spacing: 0.02em;
+    
+    margin: 0;
+    
+    background-color: $accent-color;
+    color: $primary-color;
+}

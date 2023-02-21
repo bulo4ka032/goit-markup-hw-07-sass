@@ -1,0 +1,25 @@
+@import "../utils/mixins";
+
+.services-section {
+  display: none;
+
+  @include break(1200px) {
+    display: flex;
+    padding-top: 0;
+  }
+}
+
+.services-title {
+  font-size: 36px;
+  line-height: 1.1;
+
+  text-transform: capitalize;
+  text-align: center;
+
+  margin-bottom: 72px;
+}
+
+.services {
+  display: flex;
+  gap: 24px;
+}

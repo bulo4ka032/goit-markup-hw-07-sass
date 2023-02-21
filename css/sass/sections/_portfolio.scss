@@ -1,0 +1,127 @@
+@import "../utils/mixins";
+@import "../utils/variables";
+
+.filter-button {
+  font-family: var(--primary-font);
+
+  padding: 8px 16px;
+
+  color: $pre-active-color;
+  background-color: #f4f4fd;
+  border: 1px solid $light-color;
+
+  box-shadow: none;
+
+  transition: background-color $transition-duration-and-fun,
+    color $transition-duration-and-fun;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: $accent-color;
+    background-color: $active-color;
+  }
+}
+
+.filter-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 24px;
+  row-gap: 16px;
+  width: 270px;
+
+  margin-bottom: 48px;
+
+  @include break(768px) {
+    width: auto;
+    justify-content: center;
+  }
+}
+
+.project-list-wraper {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay {
+  background-color: $pre-active-color;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  overflow: auto;
+  transform: translateY(+100%);
+  transition: transform $transition-duration-and-fun;
+
+  font-size: 16px;
+  line-height: 1.5;
+  color: #f4f4fd;
+  padding-top: 40px;
+  padding-left: 32px;
+  padding-right: 32px;
+}
+
+.project-list-link:hover .overlay,
+.project-list-link:focus .overlay {
+  transform: translate(0, 0);
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  row-gap: 48px;
+
+  @include break(768px) {
+    flex-direction: row;
+    // column-gap: 24px;
+    row-gap: 72px;
+    column-gap: 24px;
+  }
+
+  @include break(1200px) {
+    row-gap: 48px;
+    column-gap: 24px;
+  }
+}
+
+.project-item {
+  &:hover .project-description,
+  &:focus .project-description {
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+      0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+  }
+
+  @include break(768px) {
+    width: calc((100% - 24px) / 2);
+  }
+
+  @include break(1200px) {
+    width: calc((100% - 48px) / 3);
+  }
+}
+
+.project-img-title {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+
+  color: $primary-color;
+
+  margin-bottom: 8px;
+}
+
+.project-description {
+  padding: 32px 0 32px 16px;
+  border: 1px solid $light-color;
+  border-top: none;
+
+  transition: box-shadow $transition-duration-and-fun;
+}
+
+.project-type {
+  font-size: 16px;
+  line-height: 1.5;
+  color: $secondary-color;
+}

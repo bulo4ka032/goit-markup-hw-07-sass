@@ -1,0 +1,127 @@
+@import "../utils/variables";
+
+.mobile-menu-open {
+  border: none;
+  background-color: $accent-color;
+  box-shadow: none;
+  margin: 0;
+
+  @include break(768px) {
+    display: none;
+  }
+}
+
+.mobile-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+
+  padding-top: 80px;
+  padding-left: 40px;
+  padding-bottom: 40px;
+
+  background-color: $accent-color;
+  box-shadow: 0 0 0 100vmax rgb(255, 255, 255);
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition: opacity $transition-duration-and-fun,
+    visibility $transition-duration-and-fun;
+}
+
+.mobile-menu.is-open {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mobile-menu__close-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  height: 24px;
+
+  position: absolute;
+  top: 40px;
+  right: 70px;
+
+  background-color: var(--light-color);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 0;
+  border-radius: 50%;
+
+  transition: background-color $transition-duration-and-fun;
+}
+
+.mobile-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.mobile-menu-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+
+  color: $primary-color;
+  transition: color $transition-duration-and-fun;
+
+  &:hover,
+  &:focus {
+    color: $active-color;
+  }
+}
+
+.mobile-menu-contacts-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 40px;
+}
+.mobile-menu-link-contacts {
+  color: $active-color;
+}
+
+.mobile-menu-link-contact-phone {
+  color: $pre-active-color;
+}
+
+.mobile-menu-contact-mail {
+  color: $primary-color;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+}
+
+.mobile-menu-contact-phone {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.11;
+  color: $pre-active-color;
+}
+
+.mobile-menu-social-list {
+  display: flex;
+  gap: 56px;
+}
+
+.mobile-menu-social-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: $pre-active-color;
+}

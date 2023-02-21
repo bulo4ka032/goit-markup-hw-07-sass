@@ -1,0 +1,154 @@
+@import "../utils/variables";
+@import "../utils/mixins";
+
+.logo {
+  font-family: $secondary-font;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 1.33;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: $primary-color;
+}
+
+.logo-left-part {
+  color: $pre-active-color;
+}
+
+.header {
+  border-bottom: 1px solid $light-color;
+  @include range(320px, 479px) {
+    padding: 24px 0;
+  }
+
+  @include break(480px) {
+    padding: 24px 0;
+  }
+
+  @include break(1200px) {
+    padding: 24px 24px 28px;
+  }
+}
+
+.page-header-container {
+  display: flex;
+  justify-content: space-between;
+
+  @include break(768px) {
+    align-items: center;
+  }
+}
+
+.mobile-menu-contact-phone {
+  @include range(320px, 479px) {
+    font-weight: 700;
+    font-size: 27px;
+    line-height: 1.11;
+    color: $pre-active-color;
+  }
+}
+
+.mobile-menu-social-list {
+  @include break(480px) {
+    display: flex;
+    gap: 30px;
+  }
+}
+
+.page-nav {
+  @include break(768px) {
+    display: flex;
+  }
+}
+
+.menu {
+  @include range(320px, 479px) {
+    display: none;
+  }
+
+  @include break(480px) {
+    display: none;
+  }
+
+  @include break(768px) {
+    display: flex;
+    margin-left: 120px;
+    align-items: center;
+    gap: 40px;
+  }
+
+  @include break(1200px) {
+    margin-left: 76px;
+  }
+}
+
+.menu-link {
+  @include break(768px) {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    position: relative;
+    padding-bottom: 22px;
+    color: $primary-color;
+    transition: color $transition-duration-and-fun;
+
+    &:hover,
+    &:focus {
+      color: $pre-active-color;
+    }
+  }
+}
+
+.active {
+  color: $pre-active-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+
+    width: 100%;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $active-color;
+  }
+
+  @include break(1200px) {
+    &::after {
+      bottom: -10px;
+    }
+  }
+}
+
+.address {
+  display: none;
+
+  @include break(768px) {
+    display: block;
+  }
+}
+
+.page-address {
+  @include break(1200px) {
+    display: flex;
+    gap: 40px;
+  }
+}
+
+.contact-mail,
+.contact-phone-num {
+  color: $secondary-color;
+  font-size: 12px;
+  line-height: 1.33;
+  transition: color $transition-duration-and-fun;
+
+  &:hover,
+  &:focus {
+    color: $pre-active-color;
+  }
+
+  @include break(1200px) {
+    font-size: 16px;
+  }
+}

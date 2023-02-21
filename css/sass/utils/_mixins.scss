@@ -1,0 +1,24 @@
+@mixin break($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
+@mixin range($min-width, $max-width) {
+  @media screen and (min-width: $min-width) and (max-width: $max-width) {
+    @content;
+  }
+}
+
+@mixin pixel-ratio(
+  $min-device-pixel-ratio,
+  $min-resolution-dpi,
+  $min-resolution-dppx,
+  $min-width
+) {
+  @media screen and (min-device-pixel-ratio: $min-device-pixel-ratio) and (min-width: $min-width),
+    screen and (min-resolution: $min-resolution-dpi) and (min-width: $min-width),
+    screen and (min-resolution: $min-resolution-dppx) and (min-width: $min-width) {
+    @content;
+  }
+}

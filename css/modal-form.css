@@ -1,0 +1,144 @@
+.modal-form {
+  display: flex;
+  flex-direction: column;
+  width: 360px;
+}
+
+.modal-form-field {
+  line-height: 0;
+}
+
+.modal-form-input {
+  width: 100%;
+  height: 40px;
+  padding-left: 38px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-input:hover, .modal-form-input:focus {
+  border-color: #404bbf;
+  outline: none;
+}
+.modal-form-input:focus + .modal-form-input-icon, .modal-form-input:hover + .modal-form-input-icon {
+  fill: #404bbf;
+}
+
+.modal-form-input-desc {
+  display: block;
+  font-size: 12px;
+  line-height: 1.67;
+  letter-spacing: 0.01em;
+  margin-bottom: 4px;
+  color: #8e8f99;
+}
+
+.modal-form-comment {
+  resize: none;
+  width: 100%;
+  height: 120px;
+  padding-left: 16px;
+  padding-top: 8px;
+  margin-bottom: 4px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(33, 33, 33, 0.2);
+  border-radius: 4px;
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-comment:hover,
+.modal-form-comment :focus {
+  border-color: #404bbf;
+  outline: none;
+}
+.modal-form-comment::placeholder {
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: rgba(117, 117, 117, 0.5);
+}
+
+.modal-form-input-wraper {
+  position: relative;
+}
+
+.modal-form-input-icon {
+  position: absolute;
+  top: 57%;
+  left: -5px;
+  transform: translate(100%, -50%);
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.privacy-policy-link {
+  font-style: normal;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #4d5ae5;
+}
+
+.modal-form-check-desc {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 8px;
+  margin-bottom: 24px;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #757575;
+}
+.modal-form-check-desc::before {
+  display: block;
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 1.25px solid #2e2f42;
+  border-radius: 2px;
+  margin-right: 8px;
+  cursor: pointer;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-form-check:checked + .modal-form-check-desc::before {
+  background-image: url(../images/click.svg);
+  border: none;
+}
+
+.modal-form-check:focus + .modal-form-check-desc::before {
+  border-color: #404bbf;
+}
+
+.visually-hidden {
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  margin: -1px;
+}
+
+.modal-form-submit {
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  color: #ffffff;
+  padding: 16px 32px 16px 32px;
+  background-color: #4d5ae5;
+  border-radius: 4px;
+  border: none;
+  display: block;
+  width: 169px;
+  margin-left: auto;
+  margin-right: auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.modal-form-submit:hover, .modal-form-submit:focus {
+  background-color: #404bbf;
+}/*# sourceMappingURL=modal-form.css.map */
